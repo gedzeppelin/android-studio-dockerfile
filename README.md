@@ -1,16 +1,16 @@
-# Custom Android Studio Dockerfile
+# Android Studio Dockerfile
 <a href="https://hub.docker.com/r/gedzeppelin/android-studio">
   <img src="https://developer.android.com/images/brand/Android_Robot.png"  width="250">
 </a>
 
-My custom Android Studio docker build with GUI and USB device support. 
+My Android Studio docker build with GUI and USB device support. 
 
 ## Requirements
 * Obviously, [Docker](https://www.docker.com/), a program that performs operating-system-level virtualization (also known as containerization).
 
 ## Instalation
 
-First of all, clone the submodule and cd to it.
+First of all, clone the submodule and cd to it:
 ```
 git clone git@github.com:gedzeppelin/android-studio-dockerfile.git
 cd android-studio-dockerfile
@@ -22,7 +22,7 @@ docker build --rm -t <image_name>[:<image_tag>] .
 ```
 
 ## Usage
-You can run the Android Studio docker image with your local projects:
+You can run the Android Studio docker image with your local projects.
 
 ### With GUI support
 ```
