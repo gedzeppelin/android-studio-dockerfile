@@ -1,0 +1,16 @@
+name: main
+
+on:
+  push:
+    branches:
+      - dockerhub
+    
+jobs:
+  updateBranch:
+    name: Update master branch 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: wxdlong/hello-action@v7
+      with:
+        who-to-greet: 'Mona the Octocat'
