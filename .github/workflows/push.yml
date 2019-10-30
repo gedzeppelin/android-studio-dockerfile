@@ -1,0 +1,23 @@
+name: push
+
+on:
+  push:
+    branches:
+      - dockerhub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+      with:
+        ref: dockerhub
+    - name: push
+      uses: github-actions-x/commit@v2.1
+      with:
+        github-token: ${{ secrets.GITHUB_PAT }}
+        push-branch: 'master'
+        commit-message: 'Update'
+        force-add: 'true'
+        files: Dockerfile
