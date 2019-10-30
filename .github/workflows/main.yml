@@ -6,18 +6,14 @@ on:
     - dockerhub
     
 jobs:
-  build:
+  updateBranch:
+    name: Update master branch 
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@master
+    - uses: actions/checkout@master
+    - uses: Embraser01/update-git-branch-action@v1.0.0
+      if: github.ref == 'refs/heads/dockerhub'
       with:
-        ref: dockerhub
-    - name: push
-      uses: github-actions-x/commit@v2.1
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'master'
-        commit-message: 'Update'
-        force-add: 'true'
-        files: Dockerfile
+        branch: master
+        # force: 1 # To push-force to the branch
+        githubToken: ${{ secrets.PAT_TOKEN }} # Github Token
