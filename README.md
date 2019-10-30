@@ -10,7 +10,7 @@ My Android Studio docker build with GUI and USB device support.
 
 ## Instalation
 
-First of all, clone the submodule and cd to it:
+First of all, clone the repository and cd to it:
 ```
 git clone git@github.com:gedzeppelin/android-studio-dockerfile.git
 cd android-studio-dockerfile
@@ -26,10 +26,10 @@ You can run the Android Studio docker image with your local projects.
 
 ### With GUI support
 ```
-docker run [-d | -ti] --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro [-v <local_project_folder>:/home/developer/AndroidStudioProjects] <image_name>[:<image_tag>]
+docker run -d --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro [-v </local/project/folder>:/home/developer/AndroidStudioProjects] <image_name>[:<image_tag>]
 ```
 
 ### With GUI and USB device support
 ```
-docker run [-d | -ti] --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged -v /dev/bus/usb:/dev/bus/usb [-v <local_project_folder>:/home/developer/AndroidStudioProjects] <image_name>[:<image_tag>]
+docker run -d --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged -v /dev/bus/usb:/dev/bus/usb [-v /local/project/folder>:/home/developer/AndroidStudioProjects] <image_name>[:<image_tag>]
 ```
