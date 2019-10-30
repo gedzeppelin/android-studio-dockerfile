@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-LABEL maintainer="gedy.palomino@gmail.com"
+LABEL maintainer="gedy.g111@gmail.com"
 
 ARG USER=developer
 ARG LOCALE=America/Lima
