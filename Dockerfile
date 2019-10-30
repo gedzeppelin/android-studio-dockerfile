@@ -1,7 +1,8 @@
 FROM ubuntu:latest
-MAINTAINER Gedy Palomino <gedy.palomino@gmail.com>
+LABEL maintainer="gedy.palomino@gmail.com"
 
 ARG USER=developer
+ARG LOCALE=America/Lima
 
 # Adding 32 bits repositories
 RUN dpkg --add-architecture i386
@@ -40,7 +41,7 @@ RUN cd /opt/ && tar -xvzf android-studio.tar.gz && rm android-studio.tar.gz
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
-ENV TZ=America/Lima
+ENV TZ=${LOCALE}
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Change current user and workdir
