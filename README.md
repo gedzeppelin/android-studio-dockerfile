@@ -5,10 +5,10 @@ You can run the Android Studio docker image with your local projects.
 
 ### With GUI support
 ```
-docker run -d --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro [-v <local_project_folder>:/home/developer/AndroidStudioProjects] gedzeppelin/android-studio[:<tag>]
+docker run -d [--name <container_name>] -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro [-v </local/project/folder>:/home/developer/AndroidStudioProjects] gedzeppelin/android-studio[:<tag>]
 ```
 
 ### With GUI and USB device support
 ```
-docker run -d --name <container_name> -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged -v /dev/bus/usb:/dev/bus/usb [-v <local_project_folder>:/home/developer/AndroidStudioProjects] gedzeppelin/android-studio[:<tag>]
+docker run -d [--name <container_name>] -u $(id -u):$(id -g) -e=DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged -v /dev/bus/usb:/dev/bus/usb [-v </local/project/folder>:/home/developer/AndroidStudioProjects] gedzeppelin/android-studio[:<tag>]
 ```
