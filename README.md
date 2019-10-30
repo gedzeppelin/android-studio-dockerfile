@@ -9,7 +9,6 @@ My Android Studio docker build with GUI and USB device support.
 * Obviously, [Docker](https://www.docker.com/), a program that performs operating-system-level virtualization (also known as containerization).
 
 ## Instalation
-
 First of all, clone the repository and cd to it:
 ```
 git clone git@github.com:gedzeppelin/android-studio-dockerfile.git

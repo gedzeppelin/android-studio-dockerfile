@@ -1,7 +1,8 @@
 FROM ubuntu:latest
-MAINTAINER Gedy Palomino <gedy.palomino@gmail.com>
+LABEL maintainer="gedy.palomino@gmail.com"
 
 ARG USER=developer
+ARG LOCALE=America/Lima
 
 # Adding 32 bits repositories
 RUN dpkg --add-architecture i386
@@ -33,14 +34,14 @@ ADD https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules /e
 RUN chmod a+r /etc/udev/rules.d/51-android.rules
 
 # Download and unzip Android Studio for Linux
-ADD https://dl.google.com/dl/android/studio/ide-zips/3.4.2.0/android-studio-ide-183.5692245-linux.tar.gz /opt/android-studio.tar.gz
+ADD https://dl.google.com/dl/android/studio/ide-zips/3.5.1.0/android-studio-ide-191.5900203-linux.tar.gz /opt/android-studio.tar.gz
 RUN cd /opt/ && tar -xvzf android-studio.tar.gz && rm android-studio.tar.gz
 
 # Setting locales
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
-ENV TZ=America/Lima
+ENV TZ=${LOCALE}
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Change current user and workdir
