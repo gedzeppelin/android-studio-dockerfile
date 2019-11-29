@@ -1,4 +1,4 @@
-Android Studio (3.5.1) docker build with GUI and USB device support, source on this GitHub [repository](https://github.com/gedzeppelin/tomcat-dockerfile).
+Android Studio (3.5.2) docker build with GUI and USB device support, source on this GitHub [repository](https://github.com/gedzeppelin/tomcat-dockerfile).
 
 ## Usage
 You can run the Android Studio docker image with your local projects.
