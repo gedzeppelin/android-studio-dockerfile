@@ -34,7 +34,7 @@ ADD https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules /e
 RUN chmod a+r /etc/udev/rules.d/51-android.rules
 
 # Download and unzip Android Studio for Linux
-ADD https://dl.google.com/dl/android/studio/ide-zips/3.5.1.0/android-studio-ide-191.5900203-linux.tar.gz /opt/android-studio.tar.gz
+ADD https://dl.google.com/dl/android/studio/ide-zips/3.5.2.0/android-studio-ide-191.5977832-linux.tar.gz /opt/android-studio.tar.gz
 RUN cd /opt/ && tar -xvzf android-studio.tar.gz && rm android-studio.tar.gz
 
 # Setting locales
