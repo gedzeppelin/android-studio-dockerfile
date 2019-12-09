@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    android-studio:
+        image: gedzeppelin/android-studio:latest
+        user: $HOST_USER_UID:$HOST_GROUP_UID
+        container_name: android-studio
+        privileged: true
+        environment:
+            DISPLAY:
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix:ro
+            - /dev/bus/usb:/dev/bus/usb
+            - $WORK_PATH:/home/$IMAGE_USER/AndroidStudioProjects
+        
